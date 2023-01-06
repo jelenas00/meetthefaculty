@@ -1,7 +1,12 @@
+using Neo4j.Driver;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+var settings = builder.Configuration.GetSection("ApplicationSettings");
+
+builder.Services.AddSingleton(GraphDatabase.Driver("neo4j://localhost:7687", AuthTokens.Basic("neo4j", "jelena00")));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
