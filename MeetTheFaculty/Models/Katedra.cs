@@ -7,8 +7,8 @@ namespace MeetTheFaculty.Models
     public class Katedra
     {
         [Required]
-        public string KatedraID { get; set; }
-        public string Ime { get; set; }
+        public int KatedraID { get; set; }
+        public string? Ime { get; set; }
         public List<Predmet>? Predmeti { get; set; }
         public List<Profesor>? Profesori { get; set; }
         public List<Projekat>? Projekti { get; set; }

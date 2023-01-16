@@ -7,11 +7,11 @@ namespace MeetTheFaculty.Models
     public class Profesor
     {
         [Required]
-        public string PredmetID { get; set; }
-        public string Ime { get; set; }
-        public string Prezime { get; set; }
-        public string Biografija { get; set; }
-        public string Slika { get; set; }
+        public int ProfesorID { get; set; }
+        public string? Ime { get; set; }
+        public string? Prezime { get; set; }
+        public string? Biografija { get; set; }
+        public string? Slika { get; set; }
         public Katedra? Katedra { get; set; }
         public List<Predmet>? Predmeti { get; set; }
         public List<Projekat>? Projekti { get; set; }

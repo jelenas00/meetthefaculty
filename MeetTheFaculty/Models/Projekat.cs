@@ -7,9 +7,9 @@ namespace MeetTheFaculty.Models
     public class Projekat
     {
         [Required]
-        public string ProjekatID { get; set; }
-        public string Ime { get; set; }
-        public string Opis { get; set; }
+        public int ProjekatID { get; set; }
+        public string? Ime { get; set; }
+        public string? Opis { get; set; }
         public List<Katedra>? Katedre { get; set; }
         public List<Laboratorija>? Laboratorije { get; set; }
     }
