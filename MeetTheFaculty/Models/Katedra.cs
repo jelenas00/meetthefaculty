@@ -7,10 +7,10 @@ namespace MeetTheFaculty.Models
     public class Katedra
     {
         [Required]
-        public int KatedraID { get; set; }
+        public string id { get; set; }=Guid.NewGuid().ToString();
         public string? Ime { get; set; }
-        public List<Predmet>? Predmeti { get; set; }
-        public List<Profesor>? Profesori { get; set; }
-        public List<Projekat>? Projekti { get; set; }
+        public List<Pripada>? Predmeti { get; set; }
+        public List<Radi>? Profesori { get; set; }
+
     }
 }

@@ -7,14 +7,13 @@ namespace MeetTheFaculty.Models
     public class Profesor
     {
         [Required]
-        public int ProfesorID { get; set; }
+        public string id { get; set; }=Guid.NewGuid().ToString();
         public string? Ime { get; set; }
         public string? Prezime { get; set; }
         public string? Biografija { get; set; }
         public string? Slika { get; set; }
-        public Katedra? Katedra { get; set; }
-        public List<Predmet>? Predmeti { get; set; }
-        public List<Projekat>? Projekti { get; set; }
-        public List<Laboratorija>? Laboratorije { get; set; }
+        public Radi? Katedra { get; set; }
+        public List<Predaje>? Predmeti { get; set; }
+
     }
 }

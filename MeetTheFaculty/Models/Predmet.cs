@@ -7,11 +7,12 @@ namespace MeetTheFaculty.Models
     public class Predmet
     {
         [Required]
-        public int PredmetID { get; set; }
+       public string id { get; set; }=Guid.NewGuid().ToString();
         public string? Ime { get; set; }
         public string? Sifra { get; set; }
         public string? ESPB { get; set; }
         public string? Status { get; set; }
-        public List<Profesor>? Profesori{ get; set; }
+        public List<Predaje>? Profesori{ get; set; }
+        public Pripada? Katedra { get; set; }
     }
 }
