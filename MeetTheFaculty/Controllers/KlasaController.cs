@@ -54,7 +54,7 @@ namespace MeetTheFaculty.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteKatedra(string id)
         {
-            await _client.Cypher.Match("(d:Katedra {id:'"+id+"'} )").Delete("d").ExecuteWithoutResultsAsync();
+            await _client.Cypher.Match("(d:Katedra {id:'"+id+"'} )").DetachDelete("d").ExecuteWithoutResultsAsync();
 
             return Ok();
         }
@@ -101,7 +101,7 @@ namespace MeetTheFaculty.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteProfesor(string id)
         {
-            await _client.Cypher.Match("(d:Profesor {id:'"+id+"'} )").Delete("d").ExecuteWithoutResultsAsync();
+            await _client.Cypher.Match("(d:Profesor {id:'"+id+"'} )").DetachDelete("d").ExecuteWithoutResultsAsync();
 
             return Ok();
         }
@@ -148,7 +148,7 @@ namespace MeetTheFaculty.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeletePredmet(string id)
         {
-            await _client.Cypher.Match("(d:Predmet {id:'"+id+"'} )").Delete("d").ExecuteWithoutResultsAsync();
+            await _client.Cypher.Match("(d:Predmet {id:'"+id+"'} )").DetachDelete("d").ExecuteWithoutResultsAsync();
 
             return Ok();
         }
@@ -173,7 +173,9 @@ namespace MeetTheFaculty.Controllers
         [HttpPost]
         public async Task<IActionResult> CreatePredajet(string idprof,string idpred)
         {
-            await _client.Cypher.Match("(prof:Profesor {id:'"+idprof+"'})").Match("(pred:Predmet {id:'"+idpred+"'})").Create("(prof)-[rel:predajena{id:'"+Guid.NewGuid().ToString()+"'}]->(pred)").ExecuteWithoutResultsAsync();
+            var dep=await _client.Cypher.Match("(prof:Profesor {id:'"+idprof+"'})-[rel:predajena]->(pred:Predmet {id:'"+idpred+"'})").Return(rel=>rel.As<Predaje>()).ResultsAsync;
+            if((dep.Count())==0)
+                await _client.Cypher.Match("(prof:Profesor {id:'"+idprof+"'})").Match("(pred:Predmet {id:'"+idpred+"'})").Create("(prof)-[rel:predajena{id:'"+Guid.NewGuid().ToString()+"'}]->(pred)").ExecuteWithoutResultsAsync();
 
             return Ok();
         }
@@ -186,6 +188,77 @@ namespace MeetTheFaculty.Controllers
 
             return Ok();
         }
+        //Pripada
+        [Route("GetPripada/{idpred}")]
+        [HttpGet]
+        public async Task<IActionResult> GetPripada(string idpred)
+        {
+            var dep=await _client.Cypher.Match("(prof:Predmet {id:'"+idpred+"'})-[:pripadana]->(n)").Return(n=>n.As<Katedra>()).ResultsAsync;
 
+            return Ok(dep);
+        }
+        [Route("GetPripadaKat/{idkat}")]
+        [HttpGet]
+        public async Task<IActionResult> GetPripadaKat(string idkat)
+        {
+            var dep=await _client.Cypher.Match("(kat:Katedra {id:'"+idkat+"'})<-[:pripadana]-(n)").Return(n=>n.As<Predmet>()).ResultsAsync;
+
+            return Ok(dep);
+        }
+        [Route("CreatePripada/{idkat}/{idpred}")]
+        [HttpPost]
+        public async Task<IActionResult> CreatePripada(string idkat,string idpred)
+        {
+            var dep=await _client.Cypher.Match("(prof:Predmet {id:'"+idpred+"'})-[rel:pripadana]->(kat:Katedra {id:'"+idkat+"'})").Return(rel=>rel.As<Katedra>()).ResultsAsync;
+            if((dep.Count())==0)
+                await _client.Cypher.Match("(kat:Katedra {id:'"+idkat+"'})").Match("(pred:Predmet {id:'"+idpred+"'})").Create("(kat)<-[rel:pripadana{id:'"+Guid.NewGuid().ToString()+"'}]-(pred)").ExecuteWithoutResultsAsync();
+
+            return Ok();
+        }
+        [Route("DeletePripada/{idkat}/{idpred}")]
+        [HttpDelete]
+        public async Task<IActionResult> DeletePripada(string idkat,string idpred)
+        {
+            await _client.Cypher.Match("(kat:Katedra {id:'"+idkat+"'})<-[rel:pripadana]-(pred:Predmet {id:'"+idpred+"'})").Delete("rel").ExecuteWithoutResultsAsync();
+
+
+            return Ok();
+        }
+        //Radi
+        [Route("GetRadi/{idprof}")]
+        [HttpGet]
+        public async Task<IActionResult> GetRadi(string idprof)
+        {
+            var dep=await _client.Cypher.Match("(prof:Profesor {id:'"+idprof+"'})-[rel:radina]->(n)").Return(n=>n.As<Katedra>()).ResultsAsync;
+
+            return Ok(dep);
+        }
+        [Route("GetRadiKat/{idkat}")]
+        [HttpGet]
+        public async Task<IActionResult> GetRadiKat(string idkat)
+        {
+            var dep=await _client.Cypher.Match("(kat:Katedra {id:'"+idkat+"'})<-[rel:radina]-(n)").Return(n=>n.As<Profesor>()).ResultsAsync;
+
+            return Ok(dep);
+        }
+        [Route("CreateRadi/{idkat}/{idprof}")]
+        [HttpPost]
+        public async Task<IActionResult> CreateRadi(string idkat,string idprof)
+        {
+            var dep=await _client.Cypher.Match("(prof:Profesor {id:'"+idprof+"'})-[rel:radina]->(kat:Katedra {id:'"+idkat+"'})").Return(rel=>rel.As<Katedra>()).ResultsAsync;
+            if((dep.Count())==0)
+                await _client.Cypher.Match("(kat:Katedra {id:'"+idkat+"'})").Match("(prof:Profesor {id:'"+idprof+"'})").Create("(kat)<-[rel:radina{id:'"+Guid.NewGuid().ToString()+"'}]-(prof)").ExecuteWithoutResultsAsync();
+
+            return Ok();
+        }
+        [Route("DeleteRadi/{idkat}/{idprof}")]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteRadi(string idkat,string idprof)
+        {
+            await _client.Cypher.Match("(kat:Katedra {id:'"+idkat+"'})<-[rel:radina]-(prof:Profesor {id:'"+idprof+"'})").Delete("rel").ExecuteWithoutResultsAsync();
+
+
+            return Ok();
+        }
     }
 }
