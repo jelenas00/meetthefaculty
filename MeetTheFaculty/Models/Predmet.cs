@@ -12,7 +12,5 @@ namespace MeetTheFaculty.Models
         public string? Sifra { get; set; }
         public string? ESPB { get; set; }
         public string? Status { get; set; }
-        public List<Predaje>? Profesori{ get; set; }
-        public Pripada? Katedra { get; set; }
     }
 }
