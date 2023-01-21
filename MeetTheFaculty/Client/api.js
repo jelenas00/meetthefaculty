@@ -118,8 +118,8 @@ export class Api{
         }
     }
 
-    async createPripada(idkat,idprof){
-        let response = await fetch("http://localhost:5125/Klasa/CreatePripada/"+idkat+"/"+idprof,
+    async createPripada(idkat,idpred){
+        let response = await fetch("http://localhost:5125/Klasa/CreatePripada/"+idkat+"/"+idpred,
         {
             headers:
             {
@@ -507,6 +507,9 @@ export class Api{
                         list.push(profesor);
                     });
                     return list;
+                }
+                case 204:{
+                    return 1;
                 }
             case 400:{
                 console.log(`Client error: ${await response.text()}`);
