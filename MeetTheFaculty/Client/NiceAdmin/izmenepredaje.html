@@ -180,7 +180,64 @@
 
   </aside><!-- End Sidebar-->
 
+  <main id="main" class="main">
 
+    <div class="pagetitle">
+      <h1>Veze</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Veze</li>
+          <li class="breadcrumb-item active">Katedra-predmet</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <!-- <div class="col-lg-8"> -->
+              <div class="card info-card sales-card">
+                <div class="card-body">
+                  <h5 class="card-title">Katedre:</h5>
+                  <label for="inputTip" class="form-label">Odaberi profesora:</label>
+                        <select id="inputTip" type="submit" aria-required="true" class="form-select odabirProf">
+                            <option value="false">Odaberi...</option>
+                          <!-- <option value="Obavezan">Obavezan</option>
+                          <option value="Izborni">Izborni</option>          -->
+                        </select>
+                        <div class="card info-card sales-card">
+                            <div id="brisanjeRadi"></div>
+                          </div>
+                </div>
+              </div>
+              
+        <div class="modal-footer">
+          <button class="btn btn-success " id="izmenaPredaje">Prikazi predmete profesora</button>
+        </div>
+      </div>
+      
+    </section>
+
+  </main><!-- End #main -->
+  <div class="modal fade" id="largeModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"> </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalBodytg">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger buttonr buttonr2" id="btnModaltg"><i style="font-weight:bold;" class="bi bi-x-square"></i>Obriši</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
    <!-- ======= Footer ======= -->
    <footer id="footer" class="footer">
@@ -210,7 +267,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="assets/js/izmenapredaje.js" type="module"></script>
 </body>
 
 </html>

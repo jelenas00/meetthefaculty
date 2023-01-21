@@ -21,7 +21,7 @@ izmena.onclick=(ev)=>{
     }
     else{
         var katspoj=katedre[k].id;
-        vratiPredmete(katspoj)
+        vratiProfesore(katspoj)
     }
 }
 
@@ -96,6 +96,7 @@ async function obrisiPodatak(profesori,idkat)
         let ch= await api.deleteRadi(idkat,p.id);
         if(ch==true)
         {
+            alert("Veza uspesno obrisana!")
             location.reload();
         }
         else{
@@ -104,7 +105,7 @@ async function obrisiPodatak(profesori,idkat)
     }
 }
 
-async function vratiPredmete(idkat){
+async function vratiProfesore(idkat){
     var ch= await api.getRadiKat(idkat)
     if(ch.length==0)
     {
