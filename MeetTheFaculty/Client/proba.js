@@ -2,14 +2,40 @@ import { Api } from "./api.js"
 
 var api= new Api();
 
+// var pred= {
+//     "id": "7ac7d6d6-6c26-46a0-a304-959e2ae96f28",
+//     "ime": "Projektovanje racunrskih mreza",
+//     "sifra": "231wdee",
+//     "espb": "6",
+//     "status": "izb"
+//   }
+// var ch= await api.updatePredmet(pred)
+//   console.log(ch)
+// var prof={
+//     "id": "91988c56-702f-4ee2-825b-d5518d1b9414",
+//     "ime": "Igor",
+//     "prezime": "Antolovic",
+//     "biografija": "Diplomirani inzenjer elektrotehnike i racunarstva",
+//     "slika": ""
+//   };
+// var ch= await api.updateProfesor(prof)
+// console.log(ch)
 
+// var kat={
+//     "id": "a51b47c2-8b8b-4ad1-8521-13797e8e259d",
+//     "ime": "Telekomunikacije"
+//   };
+// var ch= await api. updateKatedra(kat)
+// console.log(kat)
+// var ch= await api.getRadi("91988c56-702f-4ee2-825b-d5518d1b9414");
+// console.log(ch)
 // var ch= await api.deletePredaje("91988c56-702f-4ee2-825b-d5518d1b9414","7ac7d6d6-6c26-46a0-a304-959e2ae96f28")
 // console.log(ch)
 // var ch= await api.getPredajeProf("91988c56-702f-4ee2-825b-d5518d1b9414")
 // console.log(ch)
 // var cek= await api.deleteRadi("80148178-4783-4af5-a815-85866c01ccb4","91988c56-702f-4ee2-825b-d5518d1b9414")
 // console.log(cek)
-// var pripada= await api.createPripada("80148178-4783-4af5-a815-85866c01ccb4","91988c56-702f-4ee2-825b-d5518d1b9414")
+// var pripada= await api.createRadi("80148178-4783-4af5-a815-85866c01ccb4","91988c56-702f-4ee2-825b-d5518d1b9414")
 // console.log(pripada)
 // var predmet={"ime": "Projektovanje racunrskih mreza", "sifra": "2OEP7A01", "espb": "6","status": "Izborni"};
 // var profesor={"ime": "Igor","prezime": "Antolovic","biografija": "Diplomirani inzenjer elektrotehnike i racunarstva","slika": ""};

@@ -9,6 +9,8 @@ namespace MeetTheFaculty.Models
         [Required]
         public string id { get; set; }=Guid.NewGuid().ToString();
         public string? Ime { get; set; }
+        public string? GodinaOsnivanja { get; set; }
+        public string? Opis { get; set; }
 
     }
 }

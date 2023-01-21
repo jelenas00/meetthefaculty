@@ -37,7 +37,9 @@ namespace MeetTheFaculty.Controllers
         public async Task<IActionResult> CreateKatedra([FromBody]Katedra dep)
         {
             await _client.Cypher.Create("(d:Katedra {id:'"+dep.id
-                                        +"',Ime:'"+dep.Ime+"'})").ExecuteWithoutResultsAsync();
+                                        +"',Ime:'"+dep.Ime
+                                        +"',GodinaOsnivanja:'"+dep.GodinaOsnivanja
+                                        +"',Opis:'"+dep.Opis+"'})").ExecuteWithoutResultsAsync();
 
             return Ok(dep);
         }
@@ -46,7 +48,8 @@ namespace MeetTheFaculty.Controllers
         public async Task<IActionResult> UpdateKatedra([FromBody]Katedra dep)
         {
             await _client.Cypher.Match("(d:Katedra {id:'"+dep.id+"'})")
-            .Set("d.Ime='"+dep.Ime+"'").ExecuteWithoutResultsAsync();
+                                .Set("d.Ime='"+dep.Ime+"',d.GodinaOsnivanja:'"+dep.GodinaOsnivanja
+                                        +"',d.Opis:'"+dep.Opis+"'").ExecuteWithoutResultsAsync();
 
             return Ok(dep);
         }
@@ -81,6 +84,7 @@ namespace MeetTheFaculty.Controllers
                                         +"',Ime:'"+dep.Ime
                                         +"',Prezime:'"+dep.Prezime
                                         +"',Biografija:'"+dep.Biografija
+                                        +"',Email:'"+dep.Email
                                         +"',Slika:'"+dep.Slika+"'})").ExecuteWithoutResultsAsync();
 
             return Ok(dep);
@@ -93,6 +97,7 @@ namespace MeetTheFaculty.Controllers
             .Set("d.Ime='"+dep.Ime
             +"',d.Prezime='"+dep.Prezime
             +"',d.Biografija='"+dep.Biografija
+             +"',d.Email='"+dep.Email
             +"',d.Slika='"+dep.Slika+"'").ExecuteWithoutResultsAsync();
 
             return Ok(dep);

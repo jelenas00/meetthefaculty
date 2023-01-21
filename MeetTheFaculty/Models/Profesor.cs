@@ -12,6 +12,6 @@ namespace MeetTheFaculty.Models
         public string? Prezime { get; set; }
         public string? Biografija { get; set; }
         public string? Slika { get; set; }
-
+        public string? Email { get; set; }
     }
 }

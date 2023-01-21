@@ -358,6 +358,151 @@ export class Api{
                 {
                     var data= await response.json();
                     data.forEach(el => {
+                        const predmet= new Predmet(el.id,el.ime,el.sifra,el.espb,el.status);
+                        list.push(predmet);
+                    });
+                    return list;
+                }
+            case 400:{
+                console.log(`Client error: ${await response.text()}`);
+                return false;
+            }
+            default:{
+                console.log(`Server error: ${await response.text()}`);
+                return false;
+            }
+        }
+    }
+
+    async getPredaje(idpred)
+    {
+        let list=[]
+        let response= await fetch("http://localhost:5125/Klasa/GetPredaje/"+idpred, 
+        {
+            method:"GET"
+        });
+        switch(response.status)
+        {
+            case 200:
+                {
+                    var data= await response.json();
+                    data.forEach(el => {
+                        const profesor= new Profesor(el.id,el.ime,el.prezime,el.biografija,el.slika);
+                        list.push(profesor);
+                    });
+                    return list;
+                }
+            case 400:{
+                console.log(`Client error: ${await response.text()}`);
+                return false;
+            }
+            default:{
+                console.log(`Server error: ${await response.text()}`);
+                return false;
+            }
+        }
+    }
+
+    async getPripada(idpred)
+    {
+        let list=[]
+        let response= await fetch("http://localhost:5125/Klasa/GetPripada/"+idpred, 
+        {
+            method:"GET"
+        });
+        switch(response.status)
+        {
+            case 200:
+                {
+                    var data= await response.json();
+                    data.forEach(el => {
+                        const katedra= new Katedra(el.id,el.ime);
+                        list.push(katedra);
+                    });
+                    return list;
+                }
+            case 400:{
+                console.log(`Client error: ${await response.text()}`);
+                return false;
+            }
+            default:{
+                console.log(`Server error: ${await response.text()}`);
+                return false;
+            }
+        }
+    }
+
+    async getPripadaKat(idpred)
+    {
+        let list=[]
+        let response= await fetch("http://localhost:5125/Klasa/GetPripadaKat/"+idpred, 
+        {
+            method:"GET"
+        });
+        switch(response.status)
+        {
+            case 200:
+                {
+                    var data= await response.json();
+                    data.forEach(el => {
+                        const predmet= new Predmet(el.id,el.ime,el.sifra,el.espb,el.status);
+                        list.push(predmet);
+                    });
+                    return list;
+                }
+            case 400:{
+                console.log(`Client error: ${await response.text()}`);
+                return false;
+            }
+            default:{
+                console.log(`Server error: ${await response.text()}`);
+                return false;
+            }
+        }
+    }
+
+    async getRadi(idprof)
+    {
+        let list=[]
+        let response= await fetch("http://localhost:5125/Klasa/GetRadi/"+idprof, 
+        {
+            method:"GET"
+        });
+        switch(response.status)
+        {
+            case 200:
+                {
+                    var data= await response.json();
+                    data.forEach(el => {
+                        const katedra= new Katedra(el.id,el.ime);
+                        list.push(katedra);
+                    });
+                    return list;
+                }
+            case 400:{
+                console.log(`Client error: ${await response.text()}`);
+                return false;
+            }
+            default:{
+                console.log(`Server error: ${await response.text()}`);
+                return false;
+            }
+        }
+    }
+
+    async getRadiKat(idkat)
+    {
+        let list=[]
+        let response= await fetch("http://localhost:5125/Klasa/GetRadiKat/"+idkat, 
+        {
+            method:"GET"
+        });
+        switch(response.status)
+        {
+            case 200:
+                {
+                    var data= await response.json();
+                    data.forEach(el => {
                         const profesor= new Profesor(el.id,el.ime,el.prezime,el.biografija,el.slika);
                         list.push(profesor);
                     });
@@ -374,6 +519,89 @@ export class Api{
         }
     }
     ////////////////////////PUT///////////////////////////////////
+    async updateKatedra(katedra){
+
+        let response = await fetch("http://localhost:5125/Klasa/UpdateKatedra",
+        {
+            headers:
+            {
+                Accept:"application/json",
+                "Content-type":"application/json",
+            },
+            method:"PUT",
+            body: JSON.stringify(katedra)
+        });
+
+        switch(response.status){
+            case 200: {
+                return response.json();
+            }
+            case 400:{
+                console.log(`Client error: ${await response.text()}`);
+                return false;
+            }
+            default:{
+                console.log(`Server error: ${await response.text()}`);
+                return false;
+            }
+        }
+    }
+
+    async updatePredmet(predmet){
+
+        let response = await fetch("http://localhost:5125/Klasa/UpdatePredmet",
+        {
+            headers:
+            {
+                Accept:"application/json",
+                "Content-type":"application/json",
+            },
+            method:"PUT",
+            body: JSON.stringify(predmet)
+        });
+
+        switch(response.status){
+            case 200: {
+                return response.json();
+            }
+            case 400:{
+                console.log(`Client error: ${await response.text()}`);
+                return false;
+            }
+            default:{
+                console.log(`Server error: ${await response.text()}`);
+                return false;
+            }
+        }
+    }
+
+    async updateProfesor(profesor){
+
+        let response = await fetch("http://localhost:5125/Klasa/UpdateProfesor",
+        {
+            headers:
+            {
+                Accept:"application/json",
+                "Content-type":"application/json",
+            },
+            method:"PUT",
+            body: JSON.stringify(profesor)
+        });
+
+        switch(response.status){
+            case 200: {
+                return response.json();
+            }
+            case 400:{
+                console.log(`Client error: ${await response.text()}`);
+                return false;
+            }
+            default:{
+                console.log(`Server error: ${await response.text()}`);
+                return false;
+            }
+        }
+    }
     ////////////////////////DELETE////////////////////////////////
     async deleteKatedra(id)
     {
