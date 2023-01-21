@@ -184,7 +184,7 @@ export class Api{
                 {
                     var data= await response.json();
                     data.forEach(el => {
-                        const katedra= new Katedra(el.id,el.ime);
+                        const katedra= new Katedra(el.id,el.ime,el.godinaOsnivanja,el.opis);
                         list.push(katedra);
                     });
                     return list;
@@ -213,7 +213,7 @@ export class Api{
                 {
                     var data= await response.json();
                     data.forEach(el => {
-                        const katedra= new Katedra(el.id,el.ime);
+                        const katedra= new Katedra(el.id,el.ime,el.godinaOsnivanja,el.opis);
                         list.push(katedra);
                     });
                     return list;
@@ -300,7 +300,7 @@ export class Api{
                 {
                     var data= await response.json();
                     data.forEach(el => {
-                        const profesor= new Profesor(el.id,el.ime,el.prezime,el.biografija,el.slika);
+                        const profesor= new Profesor(el.id,el.ime,el.prezime,el.biografija,el.slika,el.email);
                         list.push(profesor);
                     });
                     return list;
@@ -329,7 +329,7 @@ export class Api{
                 {
                     var data= await response.json();
                     data.forEach(el => {
-                        const profesor= new Profesor(el.id,el.ime,el.prezime,el.biografija,el.slika);
+                        const profesor= new Profesor(el.id,el.ime,el.prezime,el.biografija,el.slika,el.email);
                         list.push(profesor);
                     });
                     return list;
@@ -387,7 +387,7 @@ export class Api{
                 {
                     var data= await response.json();
                     data.forEach(el => {
-                        const profesor= new Profesor(el.id,el.ime,el.prezime,el.biografija,el.slika);
+                        const profesor= new Profesor(el.id,el.ime,el.prezime,el.biografija,el.slika,el.email);
                         list.push(profesor);
                     });
                     return list;
@@ -416,7 +416,7 @@ export class Api{
                 {
                     var data= await response.json();
                     data.forEach(el => {
-                        const katedra= new Katedra(el.id,el.ime);
+                        const katedra= new Katedra(el.id,el.ime,el.godinaOsnivanja,el.opis);
                         list.push(katedra);
                     });
                     return list;
@@ -474,7 +474,7 @@ export class Api{
                 {
                     var data= await response.json();
                     data.forEach(el => {
-                        const katedra= new Katedra(el.id,el.ime);
+                        const katedra= new Katedra(el.id,el.ime,el.godinaOsnivanja,el.opis);
                         list.push(katedra);
                     });
                     return list;
@@ -503,7 +503,7 @@ export class Api{
                 {
                     var data= await response.json();
                     data.forEach(el => {
-                        const profesor= new Profesor(el.id,el.ime,el.prezime,el.biografija,el.slika);
+                        const profesor= new Profesor(el.id,el.ime,el.prezime,el.biografija,el.slika,el.email);
                         list.push(profesor);
                     });
                     return list;
@@ -534,7 +534,7 @@ export class Api{
 
         switch(response.status){
             case 200: {
-                return response.json();
+                return true;
             }
             case 400:{
                 console.log(`Client error: ${await response.text()}`);
@@ -562,7 +562,7 @@ export class Api{
 
         switch(response.status){
             case 200: {
-                return response.json();
+                return true;
             }
             case 400:{
                 console.log(`Client error: ${await response.text()}`);
@@ -590,7 +590,7 @@ export class Api{
 
         switch(response.status){
             case 200: {
-                return response.json();
+                return true;
             }
             case 400:{
                 console.log(`Client error: ${await response.text()}`);
@@ -605,7 +605,7 @@ export class Api{
     ////////////////////////DELETE////////////////////////////////
     async deleteKatedra(id)
     {
-        let response= await fetch("http://localhost:5125/Klasa/DeletePredmet/"+id,
+        let response= await fetch("http://localhost:5125/Klasa/DeleteKatedra/"+id,
         {
             method:"DELETE"
         });
