@@ -53,6 +53,7 @@ document.querySelectorAll(".member").forEach(el=>{
         document.getElementById("modalImePrezime").innerHTML=profesori[el.id].ime+" "+profesori[el.id].prezime
         document.getElementById("photo").innerHTML=`<img src="${profesori[el.id].slika}" class="img-fluid" alt="">`
         document.getElementById("bio").innerHTML=profesori[el.id].biografija
+        document.getElementById("predmeti").innerHTML=``
         predmeti.forEach((el,i)=>{
             document.getElementById("predmeti").innerHTML+=`
             <li class="predmetiProfesora" id=${i}>${el.ime}</li>
