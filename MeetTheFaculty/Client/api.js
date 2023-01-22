@@ -432,10 +432,10 @@ export class Api{
         }
     }
 
-    async getPripadaKat(idpred)
+    async getPripadaKat(idkat)
     {
         let list=[]
-        let response= await fetch("http://localhost:5125/Klasa/GetPripadaKat/"+idpred, 
+        let response= await fetch("http://localhost:5125/Klasa/GetPripadaKat/"+idkat, 
         {
             method:"GET"
         });

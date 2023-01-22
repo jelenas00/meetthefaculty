@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -49,15 +49,8 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a href="index.html">Početna</a></li>
-          <li><a href="profesori.html">Profesori</a></li>
-          <li><a class="active" href="predmeti.html">Predmeti</a></li>
-
-          <li class="dropdown"><a href="katedre.html"><span>Katedre</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Računarstvo</a></li>
-              <li><a href="#">Automatika</a></li>
-              <li><a href="#">Elektronika</a></li>
-              <li><a href="#">Energetika</a></li>
+          <li class="dropdown"><a class="active" href="katedre.html"><span>Katedre</span> <i class="bi bi-chevron-down"></i></a>
+            <ul id="katedre">
             </ul>
           </li>
           <li><a href="contact.html">Kontakt</a></li>
@@ -68,112 +61,35 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
+  <main id="main" data-aos="fade-in">
 
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs" data-aos="fade-in">
-      <div class="container">
-        <h2>Predmeti</h2>
-        <p> Bacite pogled na spisak predmeta (koji vas verovatno ne interesuju ali svakako morate da ih polozite) !  </p>
+    <div class="breadcrumbs">
+      <div class="container" id="slikaKat">
+        <h2 id="imeKat"> </h2> <!-- POVLACI SE IZ BAZU !!!! -->
+        <!-- <p> Списак катедри на Електронском факултету у Нишу. <br> (bad copy) </p> -->
       </div>
     </div><!-- End Breadcrumbs -->
 
-
-    <!-- ======= Courses Section ======= -->
-    <section id="courses" class="courses">
+    <!-- ======= Events Section ======= -->
+    <section id="trainers" class="trainers">
       <div class="container" data-aos="fade-up">
 
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+        <div>
+            <p style="font-size: larger;"> Predmeti: </p>
+            <br>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="course-item">
-              <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>KATEDRA ZA RACUNARSTVO</h4>
-                  <p class="price">$169</p>
-                </div>
+            <div class="row" data-aos="zoom-in" data-aos-delay="100" id="predmeti">
+                
+              <ul id="predmetiKat">
+              </ul>
+        </div>
 
-                <h3><a href="course-details.html">Website Design</a></h3>
-                <p>web pwogwamiwanje je mng kuw predmet jer nam je asistent biwa Mawia</p>
-                <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                    <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
-                    <span>Mawia</span>
-                  </div>
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bx bx-user"></i>&nbsp;50
-                    &nbsp;&nbsp;
-                    <i class="bx bx-heart"></i>&nbsp;65
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="course-item">
-              <img src="assets/img/course-2.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Marketing</h4>
-                  <p class="price">$250</p>
-                </div>
-
-                <h3><a href="course-details.html">Search Engine Optimization</a></h3>
-                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-                <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                    <img src="assets/img/trainers/trainer-2.jpg" class="img-fluid" alt="">
-                    <span>Lana</span>
-                  </div>
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bx bx-user"></i>&nbsp;35
-                    &nbsp;&nbsp;
-                    <i class="bx bx-heart"></i>&nbsp;42
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="course-item">
-              <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Content</h4>
-                  <p class="price">$180</p>
-                </div>
-
-                <h3><a href="course-details.html">Copywriting</a></h3>
-                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
-                <div class="trainer d-flex justify-content-between align-items-center">
-                  <div class="trainer-profile d-flex align-items-center">
-                    <img src="assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
-                    <span>Brandon</span>
-                  </div>
-                  <div class="trainer-rank d-flex align-items-center">
-                    <i class="bx bx-user"></i>&nbsp;20
-                    &nbsp;&nbsp;
-                    <i class="bx bx-heart"></i>&nbsp;85
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End Course Item-->
-
+          </div>
         </div>
 
       </div>
-    </section><!-- End Courses Section -->
-
-
-
-
-
-
-    
+    </section><!-- End Events Section -->
 
   </main><!-- End #main -->
 
@@ -185,44 +101,24 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Mentor</h3>
+            <h3>MeetTheFaculty</h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              Aleksandra Medvedeva 14 <br>
+              Niš, 18000<br>
+              Srbija <br><br>
+              <strong>Telefon:</strong> +381 (18) 529-105<br>
+              <strong>Fax:</strong> +381 (18) 588-399<br>
+              <strong>Email:</strong> efinfo@elfak.ni.ac.rs<br>
+              <strong>PIB:</strong> 100232259<br>
+              <strong>Tekući račun:</strong> 840-1721666-89<br>
             </p>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.elfak.ni.ac.rs">Zvanicni sajt</a></li>
             </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
           </div>
 
         </div>
@@ -255,7 +151,39 @@
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Vertically Centered</h5>
+      <p>Add <code>.modal-dialog-centered</code> to <code>.modal-dialog</code> to vertically center the modal.</p>
 
+      <!-- Vertically centered Modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+        Vertically centered
+      </button>
+      <div id="modalPredmetiKatedre" class="modal fade" id="verticalycentered" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" >Predmet</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="modalImePredmeta"></div>
+              <div >
+                <ul id="predmetiModal">
+                </ul>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Vertically centered Modal-->
+
+    </div>
+  </div>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -265,7 +193,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="assets/js/predmet.js" type="module"></script>
 </body>
 
 </html>

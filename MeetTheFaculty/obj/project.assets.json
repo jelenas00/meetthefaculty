@@ -2677,19 +2677,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bojan\\.nuget\\packages\\": {}
+    "C:\\Users\\Jelena\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bojan\\Documents\\GitHub\\meetthefaculty\\MeetTheFaculty\\MeetTheFaculty.csproj",
+      "projectUniqueName": "C:\\Users\\Jelena\\Desktop\\MeetTheFaculty\\meetthefaculty\\MeetTheFaculty\\MeetTheFaculty.csproj",
       "projectName": "MeetTheFaculty",
-      "projectPath": "C:\\Users\\bojan\\Documents\\GitHub\\meetthefaculty\\MeetTheFaculty\\MeetTheFaculty.csproj",
-      "packagesPath": "C:\\Users\\bojan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bojan\\Documents\\GitHub\\meetthefaculty\\MeetTheFaculty\\obj\\",
+      "projectPath": "C:\\Users\\Jelena\\Desktop\\MeetTheFaculty\\meetthefaculty\\MeetTheFaculty\\MeetTheFaculty.csproj",
+      "packagesPath": "C:\\Users\\Jelena\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jelena\\Desktop\\MeetTheFaculty\\meetthefaculty\\MeetTheFaculty\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bojan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jelena\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2747,7 +2747,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
