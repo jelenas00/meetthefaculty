@@ -10,7 +10,7 @@ var kat=document.getElementById("katedre")
 console.log(kat)
 katedre.forEach((el,index)=>{
     kat.innerHTML+=`
-    <li id=${index}><a href="#">${el.ime}</a></li>
+    <li id=${index}><a href="">${el.ime}</a></li>
     `
 })
 var prikaz= document.getElementById("katedrePrikaz")
