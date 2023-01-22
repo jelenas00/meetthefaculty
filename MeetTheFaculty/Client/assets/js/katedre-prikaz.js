@@ -26,7 +26,7 @@ profesori.forEach((el,i)=>{
     document.getElementById("nastavniciIsaradnici").innerHTML+=`
     <div class="col-lg-4 col-md-6 d-flex align-items-stretch prof">
                   <div class="member" id="${i}">
-                    <img src="${el.slika}" class="img-fluid" alt="">
+                    <img src="${el.slika}" style="cursor: pointer;" class="img-fluid" alt="">
                     <div class="member-content">
                       <h4>${el.ime} ${el.prezime}</h4>
                       <p>

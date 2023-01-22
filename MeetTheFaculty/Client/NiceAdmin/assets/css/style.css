@@ -18,6 +18,10 @@ body {
   color: #444444;
 }
 
+td {
+  overflow-wrap: break-all;
+}
+
 a {
   color: #4154f1;
   text-decoration: none;
