@@ -10,6 +10,14 @@ var kat=document.getElementById("katedre")
 console.log(kat)
 katedre.forEach((el,index)=>{
     kat.innerHTML+=`
-    <li id=${index}><a href="#">${el.ime}</a></li>
+    <li class="dropKatedre" id=${index}><a href="#">${el.ime}</a></li>
     `
+})
+console.log(document.querySelectorAll(".dropKatedre"))
+document.querySelectorAll(".dropKatedre").forEach(el=>{
+    console.log(katedre[el.id])
+    el.onclick=(ev)=>{
+        window.location.href = "katedre-prikaz.html";
+        sessionStorage.setItem("katedraPrikaz",JSON.stringify(katedre[el.id]))
+    }
 })

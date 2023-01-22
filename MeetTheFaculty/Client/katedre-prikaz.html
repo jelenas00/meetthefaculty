@@ -65,8 +65,8 @@
 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
-      <div class="container">
-        <h2> NAZIV KATEDRE </h2> <!-- POVLACI SE IZ BAZU !!!! -->
+      <div class="container" id="slikaKat">
+        <h2 id="imeKat"> </h2> <!-- POVLACI SE IZ BAZU !!!! -->
         <!-- <p> Списак катедри на Електронском факултету у Нишу. <br> (bad copy) </p> -->
       </div>
     </div><!-- End Breadcrumbs -->
@@ -77,7 +77,7 @@
 
         <div>
             <p style="font-size: larger;"> Osnovne informacije o katedri: </p>  
-            <p> Катедра за рачунарство основана је 1969. године под називом Катедра за обраду информација. Први шеф катедре је и први декан Електронског факултета – проф. др Тихомир Алексић. Један од првих рачунара, IBM 1130, инсталиран је на Електронском факултету две године након оснивања, 1971, као део рачунског центра. Катедра 1974. године постаје Катедра за аутоматику и обраду података, да би 1978. године, после одвајања аутоматике, добила назив Катедра за обраду података. Од 1994. године Катедра добија данашњи назив – Катедра за рачунарство. Прва наставна лабораторија са PC рачунарима отворена је 1991. године, док је данас студентима на располагању преко 50 рачунара за реализацију наставних активности. </p>
+            <p id="opis"></p>
         
             <br>
             <br>
@@ -85,15 +85,15 @@
             <p style="font-size: larger;"> Nastavnici i saradnici: </p>
             <br>
 
-            <div class="row" data-aos="zoom-in" data-aos-delay="100">
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="row" data-aos="zoom-in" data-aos-delay="100" id="nastavniciIsaradnici">
+                <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                   <div class="member">
                     <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
                     <div class="member-content">
                       <h4>Walter White</h4>
                       <span>naziv predmeta</span>
                       <p>
-                        biografija biografija biografija biografijabiografija biografijabiografija biografija biografija
+                        
                       </p>
                       <div class="social">
                         <a href=""><i class="bi bi-twitter"></i></a>
@@ -112,7 +112,7 @@
                       <h4>Sarah Jhinson</h4>
                       <span> naziv predmeta </span>
                       <p>
-                        biografija biografijabiografijabiografijabiografija biografijabiografijabiografijabiografija biografijabiografija biografija biografijabiografija
+                       
                       </p>
                       <div class="social">
                         <a href=""><i class="bi bi-twitter"></i></a>
@@ -122,33 +122,9 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
         
         </div>
-        <!-- <div class="row" id="katedrePrikaz"> -->
-          <!-- <div class="col-md-6 d-flex align-items-stretch">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/events-1.jpg" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Introduction to webdesign</a></h5>
-                <p class="fst-italic text-center">Sunday, September 26th at 7:00 pm</p>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/events-2.jpg" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="">Marketing Strategies</a></h5>
-                <p class="fst-italic text-center">Sunday, November 15th at 7:00 pm</p>
-                <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-              </div>
-            </div> -->
 
           </div>
         </div>
@@ -216,7 +192,40 @@
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Vertically Centered</h5>
+      <p>Add <code>.modal-dialog-centered</code> to <code>.modal-dialog</code> to vertically center the modal.</p>
 
+      <!-- Vertically centered Modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+        Vertically centered
+      </button>
+      <div id="myModaltg" class="modal fade" id="verticalycentered" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalImePrezime"></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="photo"></div>
+              <div id="bio"></div>
+              <div >
+                <ul id="predmeti">
+                </ul>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Vertically centered Modal-->
+
+    </div>
+  </div>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -226,7 +235,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/katedre.js" type="module"></script>
+  <script src="assets/js/katedre-prikaz.js" type="module"></script>
 </body>
 
 </html>
