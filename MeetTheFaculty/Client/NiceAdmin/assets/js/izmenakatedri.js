@@ -10,6 +10,7 @@ katedre.forEach((el,i)=>{
         <td>${el.ime}</td>
         <td>${el.godinaOsnivanja}</td>
         <td>${el.opis}</td>
+        <td>${el.slikaKat}</td>
         <td name="radioKatedre"></td>
     </tr>
 `
@@ -96,7 +97,13 @@ function showModal( data) {
     <div>
         <input type="text" class="form-control input-lg" name="prezime" id="opisModaltg" value="${katedra.opis}" required/>
     </div>
-</div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Link slike</label>
+        <div>
+            <input type="text" class="form-control input-lg" name="prezime" id="slikaModaltg" value="${katedra.slikaKat}" required/>
+        </div>
+    </div>
   </form>`
     let dugmeModal=document.getElementById("btnModaltg");
     dugmeModal.onclik=(ev)=>console.log("ce bude")
@@ -107,12 +114,14 @@ async function pokupiPodatkeModal(kat)
     var ime=document.getElementById("imeModaltg").value;
     var god=document.getElementById("godinaModaltg").value;
     var opis=document.getElementById("opisModaltg").value;
+    var slika=document.getElementById("slikaModaltg").value;
     console.log(ime,god,opis)
     let katedra={
         "id": kat.id,
         "ime": ime,
         "godinaOsnivanja": god,
-        "opis": opis
+        "opis": opis,
+        "slikaKat": slika
       }
       
       console.log(katedra)

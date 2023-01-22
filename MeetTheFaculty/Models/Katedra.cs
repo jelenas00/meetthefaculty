@@ -11,6 +11,7 @@ namespace MeetTheFaculty.Models
         public string? Ime { get; set; }
         public string? GodinaOsnivanja { get; set; }
         public string? Opis { get; set; }
+        public string? SlikaKat { get; set;}
 
     }
 }

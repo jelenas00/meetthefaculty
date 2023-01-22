@@ -7,12 +7,13 @@ dodaj.onclick=(ev)=>{
     var ime= document.getElementById("inputImeKat").value;
     var god=document.getElementById("inputGodOsnKat").value;
     var opis= document.getElementById("inputOpisKat").value;
-
+    var slika=document.getElementById("inputSlikaKat").value;
     console.log(ime,god,opis)
     var kat={
         "ime": ime,
         "godinaOsnivanja": god,
-        "opis": opis
+        "opis": opis,
+        "slikaKat": slika
       }
     kreiraj(kat)
 }

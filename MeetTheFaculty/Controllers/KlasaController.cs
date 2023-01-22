@@ -39,6 +39,7 @@ namespace MeetTheFaculty.Controllers
             await _client.Cypher.Create("(d:Katedra {id:'"+dep.id
                                         +"',Ime:'"+dep.Ime
                                         +"',GodinaOsnivanja:'"+dep.GodinaOsnivanja
+                                        +"',SlikaKat:'"+dep.SlikaKat
                                         +"',Opis:'"+dep.Opis+"'})").ExecuteWithoutResultsAsync();
 
             return Ok(dep);
@@ -48,7 +49,7 @@ namespace MeetTheFaculty.Controllers
         public async Task<IActionResult> UpdateKatedra([FromBody]Katedra dep)
         {
             await _client.Cypher.Match("(d:Katedra {id:'"+dep.id+"'})")
-                                .Set("d.Ime='"+dep.Ime+"',d.GodinaOsnivanja='"+dep.GodinaOsnivanja
+                                .Set("d.Ime='"+dep.Ime+"',d.GodinaOsnivanja='"+dep.GodinaOsnivanja+"',d.SlikaKat='"+dep.SlikaKat
                                         +"',d.Opis='"+dep.Opis+"'").ExecuteWithoutResultsAsync();
 
             return Ok(dep);

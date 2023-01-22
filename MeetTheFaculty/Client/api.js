@@ -184,7 +184,7 @@ export class Api{
                 {
                     var data= await response.json();
                     data.forEach(el => {
-                        const katedra= new Katedra(el.id,el.ime,el.godinaOsnivanja,el.opis);
+                        const katedra= new Katedra(el.id,el.ime,el.godinaOsnivanja,el.opis,el.slikaKat);
                         list.push(katedra);
                     });
                     return list;
@@ -213,7 +213,7 @@ export class Api{
                 {
                     var data= await response.json();
                     data.forEach(el => {
-                        const katedra= new Katedra(el.id,el.ime,el.godinaOsnivanja,el.opis);
+                        const katedra= new Katedra(el.id,el.ime,el.godinaOsnivanja,el.opis,el.slikaKat);
                         list.push(katedra);
                     });
                     return list;
@@ -416,7 +416,7 @@ export class Api{
                 {
                     var data= await response.json();
                     data.forEach(el => {
-                        const katedra= new Katedra(el.id,el.ime,el.godinaOsnivanja,el.opis);
+                        const katedra= new Katedra(el.id,el.ime,el.godinaOsnivanja,el.opis,el.slikaKat);
                         list.push(katedra);
                     });
                     return list;
@@ -474,7 +474,7 @@ export class Api{
                 {
                     var data= await response.json();
                     data.forEach(el => {
-                        const katedra= new Katedra(el.id,el.ime,el.godinaOsnivanja,el.opis);
+                        const katedra= new Katedra(el.id,el.ime,el.godinaOsnivanja,el.opis,el.slikaKat);
                         list.push(katedra);
                     });
                     return list;
